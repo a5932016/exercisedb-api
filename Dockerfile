@@ -1,36 +1,11 @@
-# Use the official Bun image
-FROM oven/bun:latest as base
-WORKDIR /usr/src/app
+# 使用官方 Nginx 映像
+FROM nginx:alpine
 
-# Install dependencies
-FROM base AS install
-RUN mkdir -p /temp/dev
-COPY package.json bun.lockb /temp/dev/
-RUN cd /temp/dev && bun install --frozen-lockfile
+# 複製你的 Nginx 設定檔 (確保裡面有 include /etc/nginx/cloudflare_ips.conf;)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Install production dependencies
-RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
+# 複製 media 的內容到 Nginx 預設的靜態資源目錄
+COPY media /usr/share/nginx/html/media
 
-# Build the application
-FROM base AS build
-COPY --from=install /temp/dev/node_modules node_modules
-COPY . .
-RUN bun run build
-
-# Run the application
-FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
-COPY --from=build /usr/src/app/dist dist
-COPY --from=build /usr/src/app/package.json .
-COPY --from=build /usr/src/app/src/data src/data
-COPY --from=build /usr/src/app/media media
-
-# Set environment variables
-ENV NODE_ENV=production
-# The app is configured to listen on port 80 in src/server.ts
+# 暴露 Nginx 的預設 HTTP 端口
 EXPOSE 8090
-
-USER bun
-ENTRYPOINT [ "bun", "run", "start" ]
