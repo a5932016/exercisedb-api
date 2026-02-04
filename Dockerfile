@@ -25,6 +25,7 @@ COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=build /usr/src/app/dist dist
 COPY --from=build /usr/src/app/package.json .
 COPY --from=build /usr/src/app/src/data src/data
+COPY --from=build /usr/src/app/media media
 
 # Set environment variables
 ENV NODE_ENV=production

@@ -1,5 +1,7 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { Scalar } from '@scalar/hono-api-reference'
+import fs from 'fs/promises'
+import path from 'path'
 import { logger } from 'hono/logger'
 import { prettyJSON } from 'hono/pretty-json'
 import { Home } from './pages/home'
@@ -26,6 +28,47 @@ export class App {
   }
 
   private initializeRoutes(routes: Routes[]) {
+    // Serve static media files from the local `media` folder at `/media/*`
+    this.app.get('/media/*', async (c) => {
+      try {
+        // Parse URL safely (works for relative URLs) and extract the media-relative path
+        const base = c.req.header('host')
+          ? `${c.req.header('x-forwarded-proto') || 'http'}://${c.req.header('host')}`
+          : 'http://localhost'
+        const url = new URL(c.req.url, base)
+        const relPath = decodeURIComponent(url.pathname.replace(/^\/media\//, ''))
+        // Prevent path traversal
+        if (relPath.includes('..')) return c.text('Not found', 404)
+
+        // Resolve paths to handle Windows backslashes and drive letters correctly
+        const mediaRoot = path.resolve(process.cwd(), 'media')
+        const filePath = path.resolve(mediaRoot, relPath)
+        // Ensure requested file is inside mediaRoot
+        if (!(filePath === mediaRoot || filePath.startsWith(mediaRoot + path.sep))) return c.text('Not found', 404)
+
+        const data = await fs.readFile(filePath)
+        // Convert Node Buffer to Uint8Array to satisfy Web `Body` types
+        const ext = path.extname(filePath).toLowerCase()
+        const mimeMap: Record<string, string> = {
+          '.png': 'image/png',
+          '.jpg': 'image/jpeg',
+          '.jpeg': 'image/jpeg',
+          '.gif': 'image/gif',
+          '.webp': 'image/webp',
+          '.svg': 'image/svg+xml',
+          '.mp4': 'video/mp4',
+          '.webm': 'video/webm',
+          '.json': 'application/json'
+        }
+        const contentType = mimeMap[ext] || 'application/octet-stream'
+        const bodyData = new Uint8Array((data as Buffer).buffer, (data as Buffer).byteOffset, (data as Buffer).byteLength)
+        // Cast to `any` to satisfy the handler's accepted body types across different runtime typings
+        return c.body(bodyData as unknown as any, 200, { 'Content-Type': contentType })
+      } catch (err) {
+        return c.text('Not found', 404)
+      }
+    })
+
     routes.forEach((route) => {
       route.initRoutes()
       this.app.route('/api/v1', route.controller)
