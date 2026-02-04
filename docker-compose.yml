@@ -1,0 +1,13 @@
+services:
+  web:
+    container_name: fitness_diary_exercisedb
+    image: zihyan/exercisedb:v1.0.0
+    expose:
+      - "8090"
+    networks:
+      - zihyan-net
+    restart: unless-stopped
+
+networks:
+  zihyan-net:
+    external: true

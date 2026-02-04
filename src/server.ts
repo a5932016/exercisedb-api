@@ -10,5 +10,6 @@ const app = new App([
 
 export default {
   fetch: app.fetch,
-  port: 80
+  port: 8090,
+  hostname: "0.0.0.0"
 }

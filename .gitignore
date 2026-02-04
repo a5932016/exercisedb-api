@@ -6,3 +6,5 @@ seed
 .vercel
 staging.vercel
 production.vercel
+
+.env.deploy
