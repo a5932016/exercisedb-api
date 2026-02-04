@@ -7,12 +7,9 @@ APP_TAG=v1.0.0
 USER_API_ADDRESS=$(USER)@$(HOST)
 SSH_DEPLOY_PATH=$(USER_API_ADDRESS):$(DEPLOY_PATH)
 
-# ======== 1. OS 判斷與變數定義 (必須在 Target 外部) ========
 ifeq ($(OS),Windows_NT)
     # Windows 環境
 	SHELL := cmd.exe
-    # 使用 Sysnative 繞過 32bit 重導向陷阱
-    # 注意：在 64bit shell 中看得到 System32，但在 32bit make 中要用 Sysnative
     SCP   := "C:\Windows\Sysnative\OpenSSH\scp.exe"
     SSH   := "C:\Windows\Sysnative\OpenSSH\ssh.exe"
     RM    := del /Q
@@ -20,7 +17,7 @@ ifeq ($(OS),Windows_NT)
     define DEPLOY_CMD
     $(SCP) $(APP).tar $(SSH_DEPLOY_PATH)/
     $(SCP) docker-compose.yml $(SSH_DEPLOY_PATH)/
-    $(SSH) $(USER_API_ADDRESS) "docker load -i $(DEPLOY_PATH)/$(APP).tar; rm $(DEPLOY_PATH)/$(APP).tar; docker compose up -d"
+    $(SSH) $(USER_API_ADDRESS) "docker load -i $(DEPLOY_PATH)/$(APP).tar; rm $(DEPLOY_PATH)/$(APP).tar; docker compose -f $(DEPLOY_PATH)/docker-compose.yml up -d --build"
     endef
     # 定義 Windows 清理邏輯
     define CLEAN_CMD
@@ -35,14 +32,12 @@ else
     RM    := rm -f
     define DEPLOY_CMD
     rsync -avzh $(APP).tar $(SSH_DEPLOY_PATH)
-    $(SSH) $(USER_API_ADDRESS) 'docker load -i $(DEPLOY_PATH)/$(APP).tar; rm $(DEPLOY_PATH)/$(APP).tar; docker compose up -d'
+    $(SSH) $(USER_API_ADDRESS) 'docker load -i $(DEPLOY_PATH)/$(APP).tar; rm $(DEPLOY_PATH)/$(APP).tar; docker compose -f $(DEPLOY_PATH)/docker-compose.yml up -d --build'
     endef
     define CLEAN_CMD
     $(RM) $(APP).tar
     endef
 endif
-
-# ======== 2. Targets (指令區只放變數引用) ========
 
 build:
 	docker build --platform="linux/amd64" -t zihyan/$(APP):$(APP_TAG) -f Dockerfile .
