@@ -1,42 +1,42 @@
 [
   {
     "id": "neck",
-    "name": "neck"
+    "name": "頸部"
   },
   {
     "id": "lower_arms",
-    "name": "lower arms"
+    "name": "前臂"
   },
   {
     "id": "shoulders",
-    "name": "shoulders"
+    "name": "肩膀"
   },
   {
     "id": "cardio",
-    "name": "cardio"
+    "name": "心肺訓練"
   },
   {
     "id": "upper_arms",
-    "name": "upper arms"
+    "name": "上臂"
   },
   {
     "id": "chest",
-    "name": "chest"
+    "name": "胸部"
   },
   {
     "id": "lower_legs",
-    "name": "lower legs"
+    "name": "小腿"
   },
   {
     "id": "back",
-    "name": "back"
+    "name": "背部"
   },
   {
     "id": "upper_legs",
-    "name": "upper legs"
+    "name": "大腿"
   },
   {
     "id": "waist",
-    "name": "waist"
+    "name": "腰部"
   }
 ]

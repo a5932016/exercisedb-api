@@ -1,202 +1,202 @@
 [
   {
     "id": "shins",
-    "name": "shins"
+    "name": "脛部"
   },
   {
     "id": "hands",
-    "name": "hands"
+    "name": "手部"
   },
   {
     "id": "sternocleidomastoid",
-    "name": "sternocleidomastoid"
+    "name": "胸鎖乳突肌"
   },
   {
     "id": "soleus",
-    "name": "soleus"
+    "name": "比目魚肌"
   },
   {
     "id": "inner_thighs",
-    "name": "inner thighs"
+    "name": "大腿內側"
   },
   {
     "id": "lower_abs",
-    "name": "lower abs"
+    "name": "下腹肌"
   },
   {
     "id": "grip_muscles",
-    "name": "grip muscles"
+    "name": "握力肌群"
   },
   {
     "id": "abdominals",
-    "name": "abdominals"
+    "name": "腹肌"
   },
   {
     "id": "wrist_extensors",
-    "name": "wrist extensors"
+    "name": "腕伸肌"
   },
   {
     "id": "wrist_flexors",
-    "name": "wrist flexors"
+    "name": "腕屈肌"
   },
   {
     "id": "latissimus_dorsi",
-    "name": "latissimus dorsi"
+    "name": "廣背肌"
   },
   {
     "id": "upper_chest",
-    "name": "upper chest"
+    "name": "上胸"
   },
   {
     "id": "rotator_cuff",
-    "name": "rotator cuff"
+    "name": "旋轉肌群"
   },
   {
     "id": "wrists",
-    "name": "wrists"
+    "name": "手腕"
   },
   {
     "id": "groin",
-    "name": "groin"
+    "name": "鼠蹊部"
   },
   {
     "id": "brachialis",
-    "name": "brachialis"
+    "name": "肱肌"
   },
   {
     "id": "deltoids",
-    "name": "deltoids"
+    "name": "三角肌"
   },
   {
     "id": "feet",
-    "name": "feet"
+    "name": "足部"
   },
   {
     "id": "ankles",
-    "name": "ankles"
+    "name": "腳踝"
   },
   {
     "id": "trapezius",
-    "name": "trapezius"
+    "name": "斜方肌"
   },
   {
     "id": "rear_deltoids",
-    "name": "rear deltoids"
+    "name": "後三角肌"
   },
   {
     "id": "chest",
-    "name": "chest"
+    "name": "胸部"
   },
   {
     "id": "quadriceps",
-    "name": "quadriceps"
+    "name": "股四頭肌"
   },
   {
     "id": "back",
-    "name": "back"
+    "name": "背部"
   },
   {
     "id": "core",
-    "name": "core"
+    "name": "核心肌群"
   },
   {
     "id": "shoulders",
-    "name": "shoulders"
+    "name": "肩膀"
   },
   {
     "id": "ankle_stabilizers",
-    "name": "ankle stabilizers"
+    "name": "腳踝穩定肌群"
   },
   {
     "id": "rhomboids",
-    "name": "rhomboids"
+    "name": "菱形肌"
   },
   {
     "id": "obliques",
-    "name": "obliques"
+    "name": "斜腹肌"
   },
   {
     "id": "lower_back",
-    "name": "lower back"
+    "name": "下背部"
   },
   {
     "id": "hip_flexors",
-    "name": "hip flexors"
+    "name": "髖屈肌"
   },
   {
     "id": "levator_scapulae",
-    "name": "levator scapulae"
+    "name": "提肩胛肌"
   },
   {
     "id": "abdominals",
-    "name": "abductors"
+    "name": "外展肌群"
   },
   {
     "id": "serratus_anterior",
-    "name": "serratus anterior"
+    "name": "前鋸肌"
   },
   {
     "id": "traps",
-    "name": "traps"
+    "name": "斜方肌"
   },
   {
     "id": "forearms",
-    "name": "forearms"
+    "name": "前臂"
   },
   {
     "id": "delts",
-    "name": "delts"
+    "name": "三角肌"
   },
   {
     "id": "biceps",
-    "name": "biceps"
+    "name": "二頭肌"
   },
   {
     "id": "upper_back",
-    "name": "upper back"
+    "name": "上背部"
   },
   {
     "id": "spine",
-    "name": "spine"
+    "name": "脊椎"
   },
   {
     "id": "cardiovascular_system",
-    "name": "cardiovascular system"
+    "name": "心血管系統"
   },
   {
     "id": "triceps",
-    "name": "triceps"
+    "name": "三頭肌"
   },
   {
     "id": "adductors",
-    "name": "adductors"
+    "name": "內收肌群"
   },
   {
     "id": "hamstrings",
-    "name": "hamstrings"
+    "name": "腿後腱肌群"
   },
   {
     "id": "glutes",
-    "name": "glutes"
+    "name": "臀肌"
   },
   {
     "id": "pectorals",
-    "name": "pectorals"
+    "name": "胸肌"
   },
   {
     "id": "calves",
-    "name": "calves"
+    "name": "小腿肌群"
   },
   {
     "id": "lats",
-    "name": "lats"
+    "name": "廣背肌"
   },
   {
     "id": "quads",
-    "name": "quads"
+    "name": "股四頭肌"
   },
   {
     "id": "abs",
-    "name": "abs"
+    "name": "腹肌"
   }
 ]

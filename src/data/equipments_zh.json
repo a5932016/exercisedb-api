@@ -1,114 +1,114 @@
 [
   {
     "id": "stepmill_machine",
-    "name": "stepmill machine"
+    "name": "樓梯機"
   },
   {
     "id": "elliptical_machine",
-    "name": "elliptical machine"
+    "name": "橢圓機"
   },
   {
     "id": "trap_bar",
-    "name": "trap bar"
+    "name": "六角槓"
   },
   {
     "id": "tire",
-    "name": "tire"
+    "name": "輪胎"
   },
   {
     "id": "stationary_bike",
-    "name": "stationary bike"
+    "name": "健身車"
   },
   {
     "id": "wheel_roller",
-    "name": "wheel roller"
+    "name": "健腹輪"
   },
   {
     "id": "smith_machine",
-    "name": "smith machine"
+    "name": "史密斯機"
   },
   {
     "id": "hammer",
-    "name": "hammer"
+    "name": "訓練錘"
   },
   {
     "id": "skierg_machine",
-    "name": "skierg machine"
+    "name": "滑雪機"
   },
   {
     "id": "roller",
-    "name": "roller"
+    "name": "滾筒"
   },
   {
     "id": "resistance_band",
-    "name": "resistance band"
+    "name": "阻力帶"
   },
   {
     "id": "bosu_ball",
-    "name": "bosu ball"
+    "name": "半圓平衡球"
   },
   {
     "id": "weighted",
-    "name": "weighted"
+    "name": "負重"
   },
   {
     "id": "olympic_barbell",
-    "name": "olympic barbell"
+    "name": "奧林匹克槓"
   },
   {
     "id": "kettlebell",
-    "name": "kettlebell"
+    "name": "壺鈴"
   },
   {
     "id": "upper_body_ergometer",
-    "name": "upper body ergometer"
+    "name": "手搖車"
   },
   {
     "id": "sled_machine",
-    "name": "sled machine"
+    "name": "雪橇機"
   },
   {
     "id": "ez_barbell",
-    "name": "ez barbell"
+    "name": "EZ 曲槓"
   },
   {
     "id": "dumbbell",
-    "name": "dumbbell"
+    "name": "啞鈴"
   },
   {
     "id": "rope",
-    "name": "rope"
+    "name": "戰繩 / 繩索"
   },
   {
     "id": "barbell",
-    "name": "barbell"
+    "name": "槓鈴"
   },
   {
     "id": "band",
-    "name": "band"
+    "name": "彈力帶"
   },
   {
     "id": "stability_ball",
-    "name": "stability ball"
+    "name": "抗力球"
   },
   {
     "id": "medicine_ball",
-    "name": "medicine ball"
+    "name": "藥球"
   },
   {
     "id": "assisted",
-    "name": "assisted"
+    "name": "輔助"
   },
   {
     "id": "leverage_machine",
-    "name": "leverage machine"
+    "name": "槓桿式器材"
   },
   {
     "id": "cable",
-    "name": "cable"
+    "name": "纜繩"
   },
   {
     "id": "body_weight",
-    "name": "body weight"
+    "name": "自身體重"
   }
 ]
